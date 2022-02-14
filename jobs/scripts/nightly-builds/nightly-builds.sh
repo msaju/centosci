@@ -11,7 +11,7 @@ set -e
 
 BUILDREQUIRES="libaio-devel librdmacm-devel libattr-devel libxml2-devel readline-devel openssl-devel libibverbs-devel fuse-devel glib2-devel userspace-rcu-devel libacl-devel sqlite-devel libuuid-devel"
 
-if [ "${CENTOS_VERSION}" -eq 8 ]
+if [[ "${CENTOS_VERSION}" -eq 8 || "${CENTOS_VERSION}" == "8-stream" ]]
 then
     ENABLE_REPOS="--enablerepo=PowerTools,Devel"
     BUILDREQUIRES="${BUILDREQUIRES} python3-devel rpcgen libtirpc-devel"
